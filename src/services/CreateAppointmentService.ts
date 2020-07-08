@@ -2,6 +2,7 @@ import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentRepository';
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 interface Request {
   provider_id: string;

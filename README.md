@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="repo-image" title="#repo-image" src="src/assets/home-background.svg" width="150px" />
+  Go Barber
 </h1>
 
 

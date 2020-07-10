@@ -39,6 +39,7 @@ This project was developed using:
 - [Typescript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [JWT to Auth](https://jwt.io/)
 
 
 

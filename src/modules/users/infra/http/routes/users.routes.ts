@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { container } from 'tsyringe';
 import multer from 'multer';
 import uploadConfig from '@config/upload';
 import CreateUserService from '@modules/users/services/CreateUserService';
@@ -11,7 +12,7 @@ const upload = multer(uploadConfig);
 usersRouter.post('/', async (request, response) => {
   const { name, email, password } = request.body;
 
-  const createUser = new CreateUserService();
+  const createUser = container.resolve(CreateUserService);
 
   const user = await createUser.execute({
     name,
@@ -29,7 +30,7 @@ usersRouter.patch(
   ensureAuthenticated,
   upload.single('avatar'),
   async (request, response) => {
-    const updatedUserAvatar = new UpdatedUserAvatarService();
+    const updatedUserAvatar = container.resolve(UpdatedUserAvatarService);
 
     const user = await updatedUserAvatar.execute({
       user_id: request.user.id,
